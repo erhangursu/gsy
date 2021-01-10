@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:gsy/pages/pages_01.dart';
+import 'package:flutter_web_browser/flutter_web_browser.dart';
+import 'package:gsy/pages/page_0.dart';
 
 Widget gridItem(int position, String yazi) {
   var color = Colors.white;
@@ -64,13 +66,7 @@ Widget gridItem(int position, String yazi) {
         ),
         child: InkWell(
           onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => Page01(
-                  baslik: yazi,
-                ),
-              ),
-            );
+            sayfaAc(position, context);
           },
           child: Center(
             child: Column(
@@ -97,4 +93,75 @@ Widget gridItem(int position, String yazi) {
       ),
     );
   });
+}
+
+void sayfaAc(int position, context) {
+  switch (position) {
+    case 0:
+      urlAc(
+        "http://www.ataekitap.com/e-kitaplar/ilkokul/3-Sinif/3_Sinif_Egitici_Oykulerle_Okudugumu_Anliyorum/index.html",
+      );
+      break;
+    case 1:
+      urlAc(
+          "http://www.ataekitap.com/e-kitaplar/ilkokul/3-Sinif/3_Sinif_Ata_Yariyil_Tatilinde/index.html");
+      break;
+    case 2:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Page03(),
+        ),
+      );
+      //urlAc("https://www.testlericoz.com/coz/3m041");
+      break;
+    case 3:
+      urlAc(
+          "http://www.ataekitap.com/e-kitaplar/ilkokul/3-Sinif/3_Sinif_Citir_Soru_Bankasi_1_Kitap/index.html");
+      break;
+    case 4:
+      urlAc(
+          "http://www.ataekitap.com/e-kitaplar/ilkokul/3-Sinif/3_Sinif_Dikkat_Akil_Zeka_Oyunlari/index.html");
+      break;
+    case 5:
+      break;
+    case 6:
+      break;
+    case 7:
+      break;
+    case 8:
+      break;
+    case 9:
+      break;
+    case 10:
+      break;
+  }
+}
+
+void urlAc(String url) {
+  if (Platform.isAndroid) {
+    FlutterWebBrowser.openWebPage(
+      url: url,
+      customTabsOptions: CustomTabsOptions(
+        colorScheme: CustomTabsColorScheme.dark,
+        toolbarColor: Colors.deepPurple,
+        secondaryToolbarColor: Colors.green,
+        navigationBarColor: Colors.amber,
+        addDefaultShareMenuItem: true,
+        instantAppsEnabled: true,
+        showTitle: true,
+        urlBarHidingEnabled: true,
+      ),
+    );
+  } else {
+    FlutterWebBrowser.openWebPage(
+      url: url,
+      safariVCOptions: SafariViewControllerOptions(
+        barCollapsingEnabled: true,
+        preferredBarTintColor: Colors.green,
+        preferredControlTintColor: Colors.amber,
+        dismissButtonStyle: SafariViewControllerDismissButtonStyle.close,
+        modalPresentationCapturesStatusBarAppearance: true,
+      ),
+    );
+  }
 }

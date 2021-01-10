@@ -29,6 +29,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
   flutter_web_browser: ^0.13.1
+  flutter_cached_pdfview: ^0.3.4
+  youtube_player_flutter: ^7.0.0+7
 
 dev_dependencies:
   flutter_test:
@@ -49,6 +51,7 @@ flutter:
   assets:
     - assets/img/blackboard.jpg
     - assets/img/blackboard2.jpg
+    - assets/img/blackboard3.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
