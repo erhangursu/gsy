@@ -1,89 +1,84 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_web_browser/flutter_web_browser.dart';
 
 void main() {
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(primarySwatch: Colors.blue, brightness: Brightness.dark),
+      home: ExpansionPanelDemo(),
+    );
+  }
 }
 
-class _MyAppState extends State<MyApp> {
-  openBrowserTab() async {
-    await FlutterWebBrowser.openWebPage(
-        url:
-            "http://www.ataekitap.com/e-kitaplar/ilkokul/3-Sinif/3_Sinif_Egitici_Oykulerle_Okudugumu_Anliyorum/index.html");
-  }
+class ExpansionPanelDemo extends StatefulWidget {
+  ExpansionPanelDemo({Key key}) : super(key: key);
+
+  @override
+  _ExpansionPanelDemoState createState() => _ExpansionPanelDemoState();
+}
+
+class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
+  List<Item> _books = generateItems(8);
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Plugin example app'),
-        ),
-        body: new Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              RaisedButton(
-                onPressed: () => FlutterWebBrowser.warmup(),
-                child: new Text('Warmup browser website'),
-              ),
-              RaisedButton(
-                onPressed: () => openBrowserTab(),
-                child: new Text('Open Flutter website'),
-              ),
-              if (Platform.isAndroid) ...[
-                Text('test Android customizations'),
-                RaisedButton(
-                  onPressed: () {
-                    FlutterWebBrowser.openWebPage(
-                      url:
-                          "http://www.ataekitap.com/e-kitaplar/ilkokul/3-Sinif/3_Sinif_Egitici_Oykulerle_Okudugumu_Anliyorum/index.html",
-                      customTabsOptions: CustomTabsOptions(
-                        colorScheme: CustomTabsColorScheme.dark,
-                        toolbarColor: Colors.deepPurple,
-                        secondaryToolbarColor: Colors.green,
-                        navigationBarColor: Colors.amber,
-                        addDefaultShareMenuItem: true,
-                        instantAppsEnabled: true,
-                        showTitle: true,
-                        urlBarHidingEnabled: true,
-                      ),
-                    );
-                  },
-                  child: Text('Open Flutter website'),
-                ),
-              ],
-              if (Platform.isIOS) ...[
-                Text('test iOS customizations'),
-                RaisedButton(
-                  onPressed: () {
-                    FlutterWebBrowser.openWebPage(
-                      url:
-                          "http://www.ataekitap.com/e-kitaplar/ilkokul/3-Sinif/3_Sinif_Egitici_Oykulerle_Okudugumu_Anliyorum/index.html",
-                      safariVCOptions: SafariViewControllerOptions(
-                        barCollapsingEnabled: true,
-                        preferredBarTintColor: Colors.green,
-                        preferredControlTintColor: Colors.amber,
-                        dismissButtonStyle:
-                            SafariViewControllerDismissButtonStyle.close,
-                        modalPresentationCapturesStatusBarAppearance: true,
-                      ),
-                    );
-                  },
-                  child: Text('Open Flutter website'),
-                ),
-              ]
-            ],
-          ),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.only(top: 80),
+          child: _buildPanel(),
         ),
       ),
     );
   }
+
+  Widget _buildPanel() {
+    return ExpansionPanelList(
+      expansionCallback: (int index, bool isExpanded) {
+        setState(() {
+          _books[index].isExpanded = !isExpanded;
+        });
+      },
+      children: _books.map<ExpansionPanel>((Item item) {
+        return ExpansionPanel(
+          headerBuilder: (BuildContext context, bool isExpanded) {
+            return ListTile(
+              title: Text(item.headerValue),
+            );
+          },
+          body: ListTile(
+            title: Text(item.expandedValue),
+          ),
+          isExpanded: item.isExpanded,
+        );
+      }).toList(),
+    );
+  }
+}
+
+// stores ExpansionPanel state information
+class Item {
+  Item({
+    this.expandedValue,
+    this.headerValue,
+    this.isExpanded = false,
+  });
+
+  String expandedValue;
+  String headerValue;
+  bool isExpanded;
+}
+
+List<Item> generateItems(int numberOfItems) {
+  return List.generate(numberOfItems, (int index) {
+    return Item(
+      headerValue: 'Book $index',
+      expandedValue: 'Details for Book $index goes here',
+    );
+  });
 }

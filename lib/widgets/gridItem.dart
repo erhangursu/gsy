@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_browser/flutter_web_browser.dart';
-import 'package:gsy/pages/page_0.dart';
+import 'package:gsy/pages/page_03.dart';
 
 Widget gridItem(int position, String yazi) {
   var color = Colors.white;
