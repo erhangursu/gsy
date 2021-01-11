@@ -52,6 +52,21 @@ flutter:
     - assets/img/blackboard.jpg
     - assets/img/blackboard2.jpg
     - assets/img/blackboard3.jpg
+    - assets/img/blackboard6.jpg
+    - assets/img/back-to-school.jpg
+    - assets/img/gsy.jpg
+    - assets/img/01.jpg
+    - assets/img/02.png
+    - assets/img/03.png
+    - assets/img/04.png
+    - assets/img/05.jpg
+    - assets/img/06.jpg
+    - assets/img/06.jpg
+    - assets/img/07.png
+    - assets/img/08.jpg
+    - assets/img/09.png
+    - assets/img/10.jpg
+    - assets/img/11.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

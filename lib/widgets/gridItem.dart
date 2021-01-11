@@ -10,47 +10,47 @@ Widget gridItem(int position, String yazi) {
 
   switch (position) {
     case 0:
-      color = Colors.red;
+      color = Colors.red.withOpacity(0.8);
       icondata = Icons.import_contacts;
       break;
     case 1:
-      color = Colors.deepPurple;
+      color = Colors.deepPurple.withOpacity(0.8);
       icondata = Icons.book;
       break;
     case 2:
-      color = Colors.cyan;
+      color = Colors.cyan.withOpacity(0.8);
       icondata = Icons.library_books;
       break;
     case 3:
-      color = Colors.amber;
+      color = Colors.amber.withOpacity(0.8);
       icondata = Icons.access_time;
       break;
     case 4:
-      color = Colors.teal[800];
+      color = Colors.teal[800].withOpacity(0.8);
       icondata = Icons.engineering;
       break;
     case 5:
-      color = Colors.blueGrey;
+      color = Colors.blueGrey.withOpacity(0.8);
       icondata = Icons.filter_b_and_w;
       break;
     case 6:
-      color = Colors.blue[900];
+      color = Colors.blue[900].withOpacity(0.8);
       icondata = Icons.local_taxi;
       break;
     case 7:
-      color = Colors.orange;
+      color = Colors.orange.withOpacity(0.8);
       icondata = Icons.library_music;
       break;
     case 8:
-      color = Colors.pinkAccent;
+      color = Colors.pinkAccent.withOpacity(0.8);
       icondata = Icons.music_note;
       break;
     case 9:
-      color = Colors.brown;
+      color = Colors.brown.withOpacity(0.8);
       icondata = Icons.wc;
       break;
     case 10:
-      color = Colors.purple;
+      color = Colors.purple.withOpacity(0.8);
       icondata = Icons.self_improvement;
       break;
   }

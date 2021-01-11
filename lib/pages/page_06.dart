@@ -10,9 +10,10 @@ class Page06 extends StatelessWidget {
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Colors.grey, Colors.pink]),
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.pinkAccent, Colors.blueGrey],
+            ),
           ),
         ),
         title: Text(

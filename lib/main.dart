@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gsy/widgets/gridItem.dart';
+import 'package:gsy/widgets/myDrawer.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,11 +38,13 @@ class _AnasayfaState extends State<Anasayfa> {
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
+          //color: Colors.transparent.withOpacity(0.5),
           decoration: BoxDecoration(
             gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Colors.grey, Colors.pink]),
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.blueGrey, Colors.pinkAccent],
+            ),
           ),
         ),
         title: Text(
@@ -57,10 +60,9 @@ class _AnasayfaState extends State<Anasayfa> {
           IconButton(icon: Icon(Icons.notifications), onPressed: () {})
         ],
       ),
-      drawer: Drawer(
-        elevation: 5,
-        child: ListTile(),
-      ),
+      drawer: Theme(
+          data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
+          child: MyDrawer()),
       body: Material(
         child: Stack(
           children: [
@@ -69,15 +71,15 @@ class _AnasayfaState extends State<Anasayfa> {
                 image: DecorationImage(
                   // colorFilter: ColorFilter.mode(
                   //     Colors.blue.withOpacity(0.8), BlendMode.dstATop),
-                  image: AssetImage("assets/img/blackboard3.jpg"),
+                  image: AssetImage("assets/img/blackboard6.jpg"),
                   fit: BoxFit.fill,
                 ),
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 60),
+              margin: EdgeInsets.only(top: 10, bottom: 10),
               child: Padding(
-                padding: const EdgeInsets.only(left: 30, right: 30),
+                padding: const EdgeInsets.only(left: 20, right: 20),
                 child: GridView.count(
                   crossAxisCount: 2,
                   children: [
@@ -85,7 +87,7 @@ class _AnasayfaState extends State<Anasayfa> {
                     gridItem(1, 'TATİL KİTABI'),
                     gridItem(2, 'ONLİNE TESTLER'),
                     gridItem(3, 'ÇITIR ÇITIR SORU BANKASI'),
-                    gridItem(4, 'DİKKAT, AKIL,   ZEKA OYUNLARI'),
+                    gridItem(4, 'DİKKAT, AKIL, ZEKA OYUNLARI'),
                     gridItem(5, 'BASİT ORİGAMİLER'),
                     gridItem(6, 'JANDARMA ÇOCUK DERGİSİ'),
                     gridItem(7, 'SABANCI SESLİ KİTAPLAR'),
