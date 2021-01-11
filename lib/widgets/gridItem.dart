@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:gsy/pages/page_03.dart';
+import 'package:gsy/pages/page_06.dart';
 
 Widget gridItem(int position, String yazi) {
   var color = Colors.white;
@@ -112,7 +113,6 @@ void sayfaAc(int position, context) {
           builder: (context) => Page03(),
         ),
       );
-      //urlAc("https://www.testlericoz.com/coz/3m041");
       break;
     case 3:
       urlAc(
@@ -123,6 +123,11 @@ void sayfaAc(int position, context) {
           "http://www.ataekitap.com/e-kitaplar/ilkokul/3-Sinif/3_Sinif_Dikkat_Akil_Zeka_Oyunlari/index.html");
       break;
     case 5:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Page06(),
+        ),
+      );
       break;
     case 6:
       break;
