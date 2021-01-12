@@ -25,7 +25,7 @@ class Page06 extends StatelessWidget {
         ),
       ),
       body: ListView(
-        children: [Text('aaa')],
+        children: [Text('Basit Origamiler')],
       ),
     );
   }

@@ -31,6 +31,7 @@ dependencies:
   flutter_web_browser: ^0.13.1
   flutter_cached_pdfview: ^0.3.4
   youtube_player_flutter: ^7.0.0+7
+  just_audio: ^0.6.5
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,7 @@ flutter:
     - assets/img/09.png
     - assets/img/10.jpg
     - assets/img/11.png
+    - assets/audio/ben_kitap.mp3
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
