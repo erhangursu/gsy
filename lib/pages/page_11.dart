@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Page06 extends StatelessWidget {
-  const Page06({Key key}) : super(key: key);
+class Page11 extends StatelessWidget {
+  const Page11({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class Page06 extends StatelessWidget {
           ),
         ),
         title: Text(
-          'Jandarma Çocuk Dergisi',
+          'Basit Origamiler',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 24,
@@ -25,7 +25,7 @@ class Page06 extends StatelessWidget {
         ),
       ),
       body: ListView(
-        children: [Text('Jandarma Çocuk Dergisi')],
+        children: [Text('Basit Origamiler')],
       ),
     );
   }

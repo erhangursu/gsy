@@ -3,49 +3,79 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:gsy/pages/page_03.dart';
 import 'package:gsy/pages/page_06.dart';
+import 'package:gsy/pages/page_07.dart';
+import 'package:gsy/pages/page_08..dart';
+import 'package:gsy/pages/page_09.dart';
+import 'package:gsy/pages/page_10.dart';
+import 'package:gsy/pages/page_11.dart';
 
 void sayfaAc(int position, context) {
   switch (position) {
-    case 0:
+    case 1:
       urlAc(
         "http://www.ataekitap.com/e-kitaplar/ilkokul/3-Sinif/3_Sinif_Egitici_Oykulerle_Okudugumu_Anliyorum/index.html",
       );
       break;
-    case 1:
+    case 2:
       urlAc(
           "http://www.ataekitap.com/e-kitaplar/ilkokul/3-Sinif/3_Sinif_Ata_Yariyil_Tatilinde/index.html");
       break;
-    case 2:
+    case 3:
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => Page03(),
         ),
       );
       break;
-    case 3:
+    case 4:
       urlAc(
           "http://www.ataekitap.com/e-kitaplar/ilkokul/3-Sinif/3_Sinif_Citir_Soru_Bankasi_1_Kitap/index.html");
       break;
-    case 4:
+    case 5:
       urlAc(
           "http://www.ataekitap.com/e-kitaplar/ilkokul/3-Sinif/3_Sinif_Dikkat_Akil_Zeka_Oyunlari/index.html");
       break;
-    case 5:
+    case 6:
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => Page06(),
         ),
       );
       break;
-    case 6:
-      break;
     case 7:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Page07(),
+        ),
+      );
       break;
     case 8:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Page08(),
+        ),
+      );
       break;
     case 9:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Page09(),
+        ),
+      );
       break;
     case 10:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Page10(),
+        ),
+      );
+      break;
+    case 11:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Page11(),
+        ),
+      );
       break;
   }
 }

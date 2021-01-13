@@ -55,6 +55,9 @@ flutter:
     - assets/img/blackboard3.jpg
     - assets/img/blackboard6.jpg
     - assets/img/back-to-school.jpg
+    - assets/img/back02.jpg
+    - assets/img/back03.jpg
+    - assets/img/cd.png
     - assets/img/gsy.jpg
     - assets/img/01.jpg
     - assets/img/02.png
@@ -68,6 +71,7 @@ flutter:
     - assets/img/09.png
     - assets/img/10.jpg
     - assets/img/11.png
+    - assets/img/kulaklik2.png
     - assets/audio/ben_kitap.mp3
 
 
