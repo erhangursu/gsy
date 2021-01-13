@@ -1,84 +1,106 @@
-import 'dart:async';
-import 'dart:io';
-
-import 'package:fileaudioplayer/fileaudioplayer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:gsy/widgets/gridItem.dart';
+import 'package:gsy/widgets/myDrawer.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
+void main() {
+  runApp(MyApp());
 }
 
-class _MyAppState extends State<MyApp> {
-  FileAudioPlayer player = new FileAudioPlayer();
+class MyApp extends StatelessWidget {
+  const MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-            child: Column(
-          children: <Widget>[
-            new FlatButton(
-              child: new Text("Start"),
-              onPressed: () {
-                start();
-              },
-            ),
-            new FlatButton(
-              child: new Text("Stop"),
-              onPressed: () {
-                stop();
-              },
-            ),
-            new FlatButton(
-              child: new Text("Pause"),
-              onPressed: () {
-                pause();
-              },
-            ),
-            new FlatButton(
-              child: new Text("Resume"),
-              onPressed: () {
-                resume();
-              },
-            )
-          ],
-        )),
+      debugShowCheckedModeBanner: false,
+      title: 'GSY',
+      theme: ThemeData(
+        primarySwatch: Colors.pink,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      home: Anasayfa(),
     );
   }
+}
 
-  Future<void> start() async {
-    final ByteData data = await rootBundle.load('assets/audio/ben_kitap.mp3');
-    Directory tempDir = await getApplicationDocumentsDirectory();
-    File tempFile = File('${tempDir.path}/ben_kitap.mp3');
-    await tempFile.writeAsBytes(data.buffer.asUint8List(), flush: true);
-    String mp3Uri = tempFile.uri.toString();
+class Anasayfa extends StatefulWidget {
+  Anasayfa({Key key}) : super(key: key);
 
-    print("start");
+  @override
+  _AnasayfaState createState() => _AnasayfaState();
+}
 
-    await player.start(mp3Uri);
-
-    print("end");
-  }
-
-  Future<void> stop() async {
-    await player.stop();
-  }
-
-  Future<void> pause() async {
-    await player.pause();
-  }
-
-  Future<void> resume() async {
-    await player.resume();
+class _AnasayfaState extends State<Anasayfa> {
+  Size size;
+  @override
+  Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
+    return Scaffold(
+      appBar: AppBar(
+        flexibleSpace: Container(
+          //color: Colors.transparent.withOpacity(0.5),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.blueGrey, Colors.pinkAccent],
+            ),
+          ),
+        ),
+        title: Text(
+          'GSY 3-H SINIFI',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+          ),
+        ),
+        elevation: 5.0,
+        centerTitle: true,
+        actions: [
+          IconButton(icon: Icon(Icons.notifications), onPressed: () {})
+        ],
+      ),
+      drawer: Theme(
+          data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
+          child: MyDrawer()),
+      body: Material(
+        child: Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  // colorFilter: ColorFilter.mode(
+                  //     Colors.blue.withOpacity(0.8), BlendMode.dstATop),
+                  image: AssetImage("assets/img/blackboard6.jpg"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10, bottom: 10),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  children: [
+                    gridItem(0, 'EĞİTİCİ ÖYKÜLERLE OKUDUĞUNU ANLAMA'),
+                    gridItem(1, 'TATİL KİTABI'),
+                    gridItem(2, 'ONLİNE TESTLER'),
+                    gridItem(3, 'ÇITIR ÇITIR SORU BANKASI'),
+                    gridItem(4, 'DİKKAT, AKIL, ZEKA OYUNLARI'),
+                    gridItem(5, 'JANDARMA ÇOCUK DERGİSİ'),
+                    gridItem(6, 'MÜZİK KİTABINDAKİ ŞARKILAR'),
+                    gridItem(7, 'SABANCI SESLİ KİTAPLAR'),
+                    gridItem(8, 'HALK OYUNLARI'),
+                    gridItem(9, 'ZUMBA'),
+                    gridItem(10, 'BASİT ORİGAMİLER'),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

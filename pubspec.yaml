@@ -31,7 +31,6 @@ dependencies:
   flutter_web_browser: ^0.13.1
   flutter_cached_pdfview: ^0.3.4
   youtube_player_flutter: ^7.0.0+7
-  just_audio: ^0.6.5  
   fileaudioplayer: ^1.0.0
 
 dev_dependencies:
