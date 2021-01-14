@@ -7,88 +7,80 @@ class Page07 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.pinkAccent, Colors.blueGrey],
+        appBar: AppBar(
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.pinkAccent, Colors.blueGrey],
+              ),
+            ),
+          ),
+          title: Text(
+            'Müzik Kitabındaki Şarkılar',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 22,
             ),
           ),
         ),
-        title: Text(
-          'Müzik Kitabındaki Şarkılar',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-          ),
-        ),
-      ),
-      body: ListView(
-        children: [
-          Stack(
+        body: Material(
+          child: Column(
             children: [
               Container(
                 height: 150,
+                width: double.infinity,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [Colors.purpleAccent, Colors.redAccent]),
-                ),
-              ),
-              Center(
-                heightFactor: 1.2,
-                child: Container(
-                  padding: EdgeInsets.only(top: 15),
-                  height: 100,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    color: Colors.pink,
+                    colors: [
+                      Colors.deepOrangeAccent,
+                      Colors.purple,
+                    ],
+                    begin: FractionalOffset(1.2, 0.4),
+                    end: FractionalOffset(-0.3, 0.8),
+                    stops: [0.0, 1.0],
                   ),
                 ),
-              ),
-              Center(
-                heightFactor: 1.5,
-                child: Container(
-                  height: 75,
-                  width: 75,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    image: DecorationImage(
+                child: Center(
+                  child: CircleAvatar(
+                    radius: 50.0,
+                    child: Image(
                       image: AssetImage("assets/img/kulaklik2.png"),
+                      fit: BoxFit.fill,
+                      color: Colors.white,
                     ),
                   ),
+                ),
+              ),
+              Expanded(
+                child: ListView(
+                  children: [
+                    MyPlaylist(
+                      baslik: "Barış Manço - Arkadaşım Eşşek",
+                      musicLink: "assets/music/arkadasimEssek_BarisManco.mp3",
+                      musicTitle: "arkadasimEssek_BarisManco.mp3",
+                    ),
+                    // Column(
+                    //   children: [
+                    //     Row(
+                    //       children: [
+                    //         Text("data"),
+                    //       ],
+                    //     ),
+                    //   ],
+                    // )
+                  ],
                 ),
               )
             ],
           ),
-          Stack(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    colorFilter: ColorFilter.mode(
-                        Colors.blue.withOpacity(0.4), BlendMode.dstATop),
-                    image: AssetImage("assets/img/back03.jpg"),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-              // ListView(
-              //   children: [
-              //     Container(
-              //       height: 300,
-              //       child: myPlayList(),
-              //     ),
-              //   ],
-              // ),
-            ],
-          )
-        ],
-      ),
-    );
+        )
+        // ListView(
+        //   children: [
+
+        //   ],
+        // ),
+        );
   }
 }
