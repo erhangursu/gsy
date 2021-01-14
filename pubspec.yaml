@@ -75,10 +75,45 @@ flutter:
     - assets/img/pause.png
     - assets/img/stop.png
     - assets/img/next.png
+    - assets/img/music.png
     - assets/img/kulaklik.png
     - assets/img/kulaklik2.png
-    - assets/music/arkadasimEssek_BarisManco.mp3
+    - assets/img/musicPlay1.gif
+    - assets/img/musicPlayer3.gif
+    - assets/img/ben_cengizhan.jpg
+    - assets/img/ben_dali.jpg
+    - assets/img/ben_eserleri_koruyorum.jpg
+    - assets/img/ben_hali.jpg
+    - assets/img/ben_kitap.jpg
+    - assets/img/ben_picasso.jpg
+    - assets/img/ben_rodin.jpg
+    - assets/img/ben_venedik_taciri.jpg
+    - assets/audio/ben_cengizhan.mp3
+    - assets/audio/ben_dali.mp3
+    - assets/audio/ben_eserleri_koruyorum.mp3
+    - assets/audio/ben_hali.mp3
     - assets/audio/ben_kitap.mp3
+    - assets/audio/ben_picasso.mp3
+    - assets/audio/ben_rodin.mp3
+    - assets/audio/ben_venedik_taciri.mp3
+    - assets/music/arkadasimEssek_BarisManco.mp3
+    - assets/music/atabari.mp3
+    - assets/music/biricikOgretmenim.mp3
+    - assets/music/bulutOlsam.mp3
+    - assets/music/canimAtaturk.mp3
+    - assets/music/cilveloyNanayda.mp3
+    - assets/music/cumhuriyet.mp3
+    - assets/music/delilo.mp3
+    - assets/music/halay2.mp3
+    - assets/music/kisBaba.mp3
+    - assets/music/kocekce.mp3
+    - assets/music/kumestekiDostlarimiz.mp3
+    - assets/music/minikSerce_sevimliTirtil.mp3
+    - assets/music/mutluluguYakala.mp3
+    - assets/music/orman.mp3
+    - assets/music/sarkiSoylerim.mp3
+    - assets/music/ucElma.mp3
+    - assets/music/uskudaraGiderken.mp3
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
