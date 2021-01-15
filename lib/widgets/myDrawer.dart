@@ -86,13 +86,13 @@ class MyDrawer extends StatelessWidget {
                     myListTile(3, "Online Testler", 'assets/img/03.png'),
                     myListTile(4, "Çıtır Soru Bankası", 'assets/img/04.png'),
                     myListTile(5, "Zeka Oyunları", 'assets/img/05.jpg'),
-                    myListTile(6, "Basit Origramiler", 'assets/img/06.jpg'),
                     myListTile(
-                        7, "Jandarma Çocuk Dergisi", 'assets/img/07.png'),
+                        6, "Jandarma Çocuk Dergisi", 'assets/img/06.jpg'),
+                    myListTile(7, "Şarkılar", 'assets/img/07.png'),
                     myListTile(8, "Sesli Kitaplar", 'assets/img/08.jpg'),
-                    myListTile(9, "Şarkılar", 'assets/img/09.png'),
-                    myListTile(10, "Halk Oyunları", 'assets/img/10.jpg'),
-                    myListTile(11, "Zumba", 'assets/img/11.png'),
+                    myListTile(9, "Halk Oyunları", 'assets/img/09.png'),
+                    myListTile(10, "Zumba", 'assets/img/10.jpg'),
+                    myListTile(11, "Basit Origramiler", 'assets/img/11.png'),
                     ListTile(
                       leading: Container(
                         margin: EdgeInsets.only(left: 10),
