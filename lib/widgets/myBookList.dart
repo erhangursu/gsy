@@ -36,15 +36,6 @@ class _MyBookListState extends State<MyBookList> {
           child: Container(
             child: Row(
               children: [
-                // Container(
-                //   width: 70,
-                //   height: 70,
-                //   decoration: BoxDecoration(
-                //     image: DecorationImage(
-                //       image: AssetImage(widget.kitapImg),
-                //     ),
-                //   ),
-                // ),
                 CircleAvatar(
                   radius: 40,
                   backgroundImage: AssetImage(widget.kitapImg),

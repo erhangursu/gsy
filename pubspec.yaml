@@ -31,7 +31,8 @@ dependencies:
   flutter_web_browser: ^0.13.1
   flutter_cached_pdfview: ^0.3.4
   youtube_player_flutter: ^7.0.0+7
-  fileaudioplayer: ^1.0.0  
+  fileaudioplayer: ^1.0.0
+  http: ^0.12.2
 
 dev_dependencies:
   flutter_test:
@@ -64,13 +65,12 @@ flutter:
     - assets/img/03.png
     - assets/img/04.png
     - assets/img/05.jpg
-    - assets/img/06.jpg
-    - assets/img/06.jpg
+    - assets/img/06.png    
     - assets/img/07.png
     - assets/img/08.jpg
-    - assets/img/09.png
-    - assets/img/10.jpg
-    - assets/img/11.png
+    - assets/img/09.jpg
+    - assets/img/10.png
+    - assets/img/11.jpg
     - assets/img/play.png
     - assets/img/pause.png
     - assets/img/stop.png

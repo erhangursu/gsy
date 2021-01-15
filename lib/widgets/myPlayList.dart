@@ -44,32 +44,36 @@ class _MyPlayListState extends State<MyPlayList> {
                 onTap: () {
                   start();
                 },
-                child: PlayerButton(imgLink: "assets/img/play.png"),
+                child: Icon(Icons.play_arrow,
+                    size: 50), //PlayerButton(imgLink: "assets/img/play.png"),
               ),
               InkWell(
                 onTap: () {
                   stop();
                 },
-                child: PlayerButton(imgLink: "assets/img/stop.png"),
+                child: Icon(Icons.stop,
+                    size: 50), //PlayerButton(imgLink: "assets/img/stop.png"),
               ),
               InkWell(
                 onTap: () {
                   pause();
                 },
-                child: PlayerButton(imgLink: "assets/img/pause.png"),
+                child: Icon(Icons.pause,
+                    size: 50), //PlayerButton(imgLink: "assets/img/pause.png"),
               ),
               InkWell(
                 onTap: () {
                   resume();
                 },
-                child: PlayerButton(imgLink: "assets/img/next.png"),
+                child: Icon(Icons.skip_next,
+                    size: 50), //PlayerButton(imgLink: "assets/img/next.png"),
               ),
             ],
           ),
         ),
         SizedBox(height: 10),
         Container(
-          height: 250,
+          height: 220,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/img/musicPlayer3.gif"),
@@ -108,7 +112,7 @@ class _MyPlayListState extends State<MyPlayList> {
     await player.resume();
   }
 }
-
+/*
 class PlayerButton extends StatelessWidget {
   final String imgLink;
   const PlayerButton({
@@ -119,10 +123,11 @@ class PlayerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 75,
-      height: 75,
+      width: 60,
+      height: 60,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(100),
+        
         image: DecorationImage(
           image: AssetImage(imgLink),
         ),
@@ -130,3 +135,4 @@ class PlayerButton extends StatelessWidget {
     );
   }
 }
+*/

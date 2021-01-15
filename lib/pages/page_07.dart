@@ -29,7 +29,7 @@ class Page07 extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 150,
+              height: 120,
               width: double.infinity,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -44,7 +44,7 @@ class Page07 extends StatelessWidget {
               ),
               child: Center(
                 child: CircleAvatar(
-                  radius: 50.0,
+                  radius: 40.0,
                   child: Image(
                     image: AssetImage("assets/img/kulaklik2.png"),
                     fit: BoxFit.fill,
