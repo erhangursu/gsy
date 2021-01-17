@@ -28,27 +28,30 @@ class Page08 extends StatelessWidget {
       body: Material(
         child: Column(
           children: [
-            Container(
-              height: 120,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.deepOrangeAccent,
-                    Colors.purple,
-                  ],
-                  begin: FractionalOffset(1.2, 0.4),
-                  end: FractionalOffset(-0.3, 0.8),
-                  stops: [0.0, 1.0],
+            Opacity(
+              opacity: 0.9,
+              child: Container(
+                height: 120,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.deepOrangeAccent,
+                      Colors.purple,
+                    ],
+                    begin: FractionalOffset(1.2, 0.4),
+                    end: FractionalOffset(-0.3, 0.8),
+                    stops: [0.0, 1.0],
+                  ),
                 ),
-              ),
-              child: Center(
-                child: CircleAvatar(
-                  radius: 40.0,
-                  child: Image(
-                    image: AssetImage("assets/img/kulaklik2.png"),
-                    fit: BoxFit.fill,
-                    color: Colors.white,
+                child: Center(
+                  child: CircleAvatar(
+                    radius: 40.0,
+                    child: Image(
+                      image: AssetImage("assets/img/kulaklik2.png"),
+                      fit: BoxFit.fill,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

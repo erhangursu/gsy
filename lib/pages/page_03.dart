@@ -42,7 +42,7 @@ class _Page03State extends State<Page03> {
               image: DecorationImage(
                 colorFilter: ColorFilter.mode(
                     Colors.blue.withOpacity(0.4), BlendMode.dstATop),
-                image: AssetImage("assets/img/blackboard6.jpg"),
+                image: AssetImage("assets/img/blackboard.jpg"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -545,7 +545,7 @@ class _Page03State extends State<Page03> {
                   image: DecorationImage(
                     colorFilter: ColorFilter.mode(
                         Colors.blue.withOpacity(0.8), BlendMode.dstATop),
-                    image: AssetImage("assets/img/back-to-school.jpg"),
+                    image: AssetImage("assets/img/homework.jpg"),
                     fit: BoxFit.fill,
                   ),
                 ),

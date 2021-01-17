@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gsy/widgets/gridItem.dart';
+import 'package:gsy/common/gridItem.dart';
 import 'package:gsy/widgets/myDrawer.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -51,7 +52,7 @@ class _AnasayfaState extends State<Anasayfa> {
           'GSY 3-H SINIFI',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 22,
+            fontSize: 20,
           ),
         ),
         elevation: 5.0,
@@ -63,42 +64,47 @@ class _AnasayfaState extends State<Anasayfa> {
       drawer: Theme(
           data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
           child: MyDrawer()),
-      body: Material(
-        child: Stack(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  // colorFilter: ColorFilter.mode(
-                  //     Colors.blue.withOpacity(0.8), BlendMode.dstATop),
-                  image: AssetImage("assets/img/blackboard6.jpg"),
-                  fit: BoxFit.fill,
+      body: SafeArea(
+        child: Material(
+          child: Stack(
+            children: [
+              Container(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    // colorFilter: ColorFilter.mode(
+                    //     Colors.blue.withOpacity(0.8), BlendMode.dstATop),
+                    image: AssetImage("assets/img/blackboard.jpg"),
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 10, bottom: 10),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20),
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  children: [
-                    gridItem(1, 'EĞİTİCİ ÖYKÜLERLE OKUDUĞUNU ANLAMA'),
-                    gridItem(2, 'TATİL KİTABI'),
-                    gridItem(3, 'ONLİNE TESTLER'),
-                    gridItem(4, 'ÇITIR ÇITIR SORU BANKASI'),
-                    gridItem(5, 'DİKKAT, AKIL, ZEKA OYUNLARI'),
-                    gridItem(6, 'JANDARMA ÇOCUK DERGİSİ'),
-                    gridItem(7, 'MÜZİK KİTABINDAKİ ŞARKILAR'),
-                    gridItem(8, 'SABANCI SESLİ KİTAPLAR'),
-                    gridItem(9, 'HALK OYUNLARI'),
-                    gridItem(10, 'ZUMBA'),
-                    gridItem(11, 'BASİT ORİGAMİLER'),
-                  ],
+              Container(
+                margin: EdgeInsets.only(top: 10, bottom: 10),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 22, right: 22),
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    children: [
+                      gridItem(1, 'EĞİTİCİ ÖYKÜLERLE OKUDUĞUNU ANLAMA'),
+                      gridItem(2, 'TATİL KİTABI'),
+                      gridItem(3, 'ONLİNE TESTLER'),
+                      gridItem(4, 'ÇITIR SICAK ÇEREZ SORU BANKASI'),
+                      gridItem(5, 'DİKKAT, AKIL, ZEKA OYUNLARI'),
+                      gridItem(6, 'JANDARMA ÇOCUK DERGİSİ'),
+                      gridItem(7, 'MÜZİK KİTABINDAKİ ŞARKILAR'),
+                      gridItem(8, 'SABANCI SESLİ KİTAPLAR'),
+                      gridItem(9, 'HALK OYUNLARI'),
+                      gridItem(10, 'ZUMBA'),
+                      gridItem(11, 'GÖRSEL SANATLAR'),
+                      gridItem(12, 'TATİL ÇALIŞMA PROGRAMI'),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

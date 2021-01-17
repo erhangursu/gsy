@@ -32,7 +32,6 @@ dependencies:
   flutter_cached_pdfview: ^0.3.4
   youtube_player_flutter: ^7.0.0+7
   fileaudioplayer: ^1.0.0
-  http: ^0.12.2
 
 dev_dependencies:
   flutter_test:
@@ -52,13 +51,15 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/img/blackboard.jpg
-    - assets/img/blackboard2.jpg
-    - assets/img/blackboard3.jpg
-    - assets/img/blackboard6.jpg
     - assets/img/back-to-school.jpg
-    - assets/img/back02.jpg
-    - assets/img/back03.jpg
-    - assets/img/cd.png
+    - assets/img/homework.jpg
+    - assets/img/back01.png
+    - assets/img/back04.jpg
+    - assets/img/back05.jpg
+    - assets/img/zumba.jpg
+    - assets/img/zumba2.jpg
+    - assets/img/zumba01.jpg
+    - assets/img/zumba02.jpg
     - assets/img/gsy.jpg
     - assets/img/01.jpg
     - assets/img/02.png
@@ -71,14 +72,34 @@ flutter:
     - assets/img/09.jpg
     - assets/img/10.png
     - assets/img/11.jpg
+    - assets/img/12.png
     - assets/img/play.png
     - assets/img/pause.png
     - assets/img/stop.png
     - assets/img/next.png
-    - assets/img/music.png
     - assets/img/kulaklik.png
     - assets/img/kulaklik2.png
+    - assets/img/halk_oyunu.png
+    - assets/img/halk01.jpg
+    - assets/img/halk02.jpg
+    - assets/img/halk03.jpg
+    - assets/img/halk04.jpg
+    - assets/img/halk05.jpg
+    - assets/img/halk06.jpg
+    - assets/img/halk07.jpg
+    - assets/img/gorsel01.jpg
+    - assets/img/gorsel02.jpg
+    - assets/img/gorsel03.jpg
+    - assets/img/gorsel04.jpg
+    - assets/img/gorsel05.jpg
+    - assets/img/gorsel06.jpg
+    - assets/img/gorsel07.jpg
+    - assets/img/gorsel08.jpg
+    - assets/img/gorsel09.jpg
+    - assets/img/gorsel10.jpg
     - assets/img/musicPlay1.gif
+    - assets/img/jandarma1.png
+    - assets/img/jandarma2.jpg
     - assets/img/musicPlayer3.gif
     - assets/img/ben_cengizhan.jpg
     - assets/img/ben_dali.jpg
@@ -114,6 +135,14 @@ flutter:
     - assets/music/sarkiSoylerim.mp3
     - assets/music/ucElma.mp3
     - assets/music/uskudaraGiderken.mp3
+    - assets/pdf/jandarma_01.pdf
+    - assets/pdf/jandarma_02.pdf
+    - assets/pdf/jandarma_03.pdf
+    - assets/pdf/jandarma_04.pdf
+    - assets/pdf/jandarma_05.pdf
+    - assets/pdf/jandarma_06.pdf
+    - assets/pdf/jandarma_07.pdf
+    - assets/pdf/jandarma_08.pdf
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -84,7 +84,7 @@ class MyDrawer extends StatelessWidget {
                     myListTile(1, "Okuduğunu Anlama", 'assets/img/01.jpg'),
                     myListTile(2, "Tatil Kitabı", 'assets/img/02.png'),
                     myListTile(3, "Online Testler", 'assets/img/03.png'),
-                    myListTile(4, "Çıtır Soru Bankası", 'assets/img/04.png'),
+                    myListTile(4, "Çıtır Sıcak Çerez", 'assets/img/04.png'),
                     myListTile(5, "Zeka Oyunları", 'assets/img/05.jpg'),
                     myListTile(
                         6, "Jandarma Çocuk Dergisi", 'assets/img/06.png'),
@@ -92,7 +92,9 @@ class MyDrawer extends StatelessWidget {
                     myListTile(8, "Sesli Kitaplar", 'assets/img/08.jpg'),
                     myListTile(9, "Halk Oyunları", 'assets/img/09.jpg'),
                     myListTile(10, "Zumba", 'assets/img/10.png'),
-                    myListTile(11, "Basit Origramiler", 'assets/img/11.jpg'),
+                    myListTile(11, "Görsel Sanatlar", 'assets/img/11.jpg'),
+                    myListTile(
+                        12, "Tatil Çalışma Programı", 'assets/img/12.png'),
                     ListTile(
                       leading: Container(
                         margin: EdgeInsets.only(left: 10),
