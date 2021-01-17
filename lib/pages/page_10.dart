@@ -45,8 +45,8 @@ class Page10 extends StatelessWidget {
                   opacity: 1,
                   child: Container(
                     margin: EdgeInsets.only(top: 25, bottom: 15),
-                    height: (MediaQuery.of(context).size.width / 2) * 0.5,
-                    width: MediaQuery.of(context).size.width / 2,
+                    height: MediaQuery.of(context).size.width / 2,
+                    width: MediaQuery.of(context).size.width - 50,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage("assets/img/zumba2.jpg"),
@@ -57,6 +57,7 @@ class Page10 extends StatelessWidget {
                 ),
                 Expanded(
                   child: ListView(
+                    padding: EdgeInsets.all(10),
                     shrinkWrap: true,
                     children: [
                       MyVideoList(

@@ -9,6 +9,7 @@ import 'package:gsy/pages/page_09.dart';
 import 'package:gsy/pages/page_10.dart';
 import 'package:gsy/pages/page_11.dart';
 import 'package:gsy/pages/page_12.dart';
+import 'package:gsy/pages/page_13.dart';
 
 void sayfaAc(int position, context) {
   switch (position) {
@@ -82,6 +83,13 @@ void sayfaAc(int position, context) {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => Page12(),
+        ),
+      );
+      break;
+    case 13:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Page13(),
         ),
       );
       break;

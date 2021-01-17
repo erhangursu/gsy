@@ -72,7 +72,8 @@ flutter:
     - assets/img/09.jpg
     - assets/img/10.png
     - assets/img/11.jpg
-    - assets/img/12.png
+    - assets/img/12.jpg
+    - assets/img/13.png
     - assets/img/play.png
     - assets/img/pause.png
     - assets/img/stop.png
@@ -109,6 +110,13 @@ flutter:
     - assets/img/ben_picasso.jpg
     - assets/img/ben_rodin.jpg
     - assets/img/ben_venedik_taciri.jpg
+    - assets/img/adile.jpg
+    - assets/adile/degirmencinin_oglu.mp3
+    - assets/adile/hasta_fok_baligi.mp3
+    - assets/adile/kuslar_nezaman_oter.mp3
+    - assets/adile/minik_ayi_yavrusu.mp3
+    - assets/adile/minin_cokbilmisliği.mp3
+    - assets/adile/tembel_cocugun_esegi.mp3
     - assets/audio/ben_cengizhan.mp3
     - assets/audio/ben_dali.mp3
     - assets/audio/ben_eserleri_koruyorum.mp3

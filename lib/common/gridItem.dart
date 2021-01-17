@@ -51,6 +51,10 @@ Widget gridItem(int position, String yazi) {
       icondata = Icons.filter_b_and_w;
       break;
     case 12:
+      color = Colors.green.withOpacity(0.8);
+      icondata = Icons.tag_faces;
+      break;
+    case 13:
       color = Colors.yellow.withOpacity(0.8);
       icondata = Icons.push_pin;
       break;
@@ -74,7 +78,7 @@ Widget gridItem(int position, String yazi) {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                (position != 12)
+                (position != 13)
                     ? Icon(
                         icondata,
                         size: 40,
@@ -87,7 +91,7 @@ Widget gridItem(int position, String yazi) {
                       ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: (position != 12)
+                  child: (position != 13)
                       ? Text(
                           yazi,
                           textAlign: TextAlign.center,
