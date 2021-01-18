@@ -58,7 +58,15 @@ class _AnasayfaState extends State<Anasayfa> {
         elevation: 5.0,
         centerTitle: true,
         actions: [
-          IconButton(icon: Icon(Icons.notifications), onPressed: () {})
+          IconButton(
+              icon: Icon(Icons.notifications),
+              onPressed: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => Page14(),
+                //   ),
+                // );
+              }),
         ],
       ),
       drawer: Theme(

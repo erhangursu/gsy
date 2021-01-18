@@ -32,6 +32,8 @@ dependencies:
   flutter_cached_pdfview: ^0.3.4
   youtube_player_flutter: ^7.0.0+7
   fileaudioplayer: ^1.0.0
+  audio_session: ^0.0.10
+  just_audio: ^0.6.5
 
 dev_dependencies:
   flutter_test:
