@@ -26,196 +26,194 @@ class Page06 extends StatelessWidget {
           ),
         ),
       ),
-      body: Material(
-        child: Stack(
-          children: [
-            Opacity(
-              opacity: 0.7,
-              child: Expanded(
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/img/jandarma2.jpg"),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
+      body: Stack(
+        children: [
+          Opacity(
+            opacity: 0.7,
+            child: Expanded(
               child: Container(
-                height: 120,
-                width: 120,
+                width: double.infinity,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("assets/img/jandarma1.png"),
+                    image: AssetImage("assets/img/jandarma2.jpg"),
                     fit: BoxFit.fill,
                   ),
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  top: 140, left: 20, right: 20, bottom: 10),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: ListView(
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute<dynamic>(
-                                builder: (_) => PDFViewerFromAsset(
-                                  appBarTitle: 'Jandarma Çocuk Dergisi',
-                                  pdfAssetPath: 'assets/pdf/jandarma_01.pdf',
-                                ),
-                              ),
-                            );
-                          },
-                          child: JandarmaPdf(
-                            baslik: 'Jandarma Çocuk Dergisi 1. Sayı',
-                            iconData: Icons.filter_1,
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute<dynamic>(
-                                builder: (_) => PDFViewerFromAsset(
-                                  appBarTitle: 'Jandarma Çocuk Dergisi',
-                                  pdfAssetPath: 'assets/pdf/jandarma_02.pdf',
-                                ),
-                              ),
-                            );
-                          },
-                          child: JandarmaPdf(
-                            baslik: 'Jandarma Çocuk Dergisi 2. Sayı',
-                            iconData: Icons.filter_2,
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute<dynamic>(
-                                builder: (_) => PDFViewerFromAsset(
-                                  appBarTitle: 'Jandarma Çocuk Dergisi',
-                                  pdfAssetPath: 'assets/pdf/jandarma_03.pdf',
-                                ),
-                              ),
-                            );
-                          },
-                          child: JandarmaPdf(
-                            baslik: 'Jandarma Çocuk Dergisi 3. Sayı',
-                            iconData: Icons.filter_3,
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute<dynamic>(
-                                builder: (_) => PDFViewerFromAsset(
-                                  appBarTitle: 'Jandarma Çocuk Dergisi',
-                                  pdfAssetPath: 'assets/pdf/jandarma_04.pdf',
-                                ),
-                              ),
-                            );
-                          },
-                          child: JandarmaPdf(
-                            baslik: 'Jandarma Çocuk Dergisi 4. Sayı',
-                            iconData: Icons.filter_4,
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute<dynamic>(
-                                builder: (_) => PDFViewerFromAsset(
-                                  appBarTitle: 'Jandarma Çocuk Dergisi',
-                                  pdfAssetPath: 'assets/pdf/jandarma_05.pdf',
-                                ),
-                              ),
-                            );
-                          },
-                          child: JandarmaPdf(
-                            baslik: 'Jandarma Çocuk Dergisi 5. Sayı',
-                            iconData: Icons.filter_5,
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute<dynamic>(
-                                builder: (_) => PDFViewerFromAsset(
-                                  appBarTitle: 'Jandarma Çocuk Dergisi',
-                                  pdfAssetPath: 'assets/pdf/jandarma_06.pdf',
-                                ),
-                              ),
-                            );
-                          },
-                          child: JandarmaPdf(
-                            baslik: 'Jandarma Çocuk Dergisi 6. Sayı',
-                            iconData: Icons.filter_6,
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute<dynamic>(
-                                builder: (_) => PDFViewerFromAsset(
-                                  appBarTitle: 'Jandarma Çocuk Dergisi',
-                                  pdfAssetPath: 'assets/pdf/jandarma_07.pdf',
-                                ),
-                              ),
-                            );
-                          },
-                          child: JandarmaPdf(
-                            baslik: 'Jandarma Çocuk Dergisi 7. Sayı',
-                            iconData: Icons.filter_7,
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute<dynamic>(
-                                builder: (_) => PDFViewerFromAsset(
-                                  appBarTitle: 'Jandarma Çocuk Dergisi',
-                                  pdfAssetPath: 'assets/pdf/jandarma_08.pdf',
-                                ),
-                              ),
-                            );
-                          },
-                          child: JandarmaPdf(
-                            baslik: 'Jandarma Çocuk Dergisi 8. Sayı',
-                            iconData: Icons.filter_8,
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                      ],
-                    ),
-                  ),
-                ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+              height: 120,
+              width: 120,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/img/jandarma1.png"),
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
-          ],
-        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+                top: 140, left: 20, right: 20, bottom: 10),
+            child: Column(
+              children: [
+                Expanded(
+                  child: ListView(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<dynamic>(
+                              builder: (_) => PDFViewerFromAsset(
+                                appBarTitle: 'Jandarma Çocuk Dergisi',
+                                pdfAssetPath: 'assets/pdf/jandarma_01.pdf',
+                              ),
+                            ),
+                          );
+                        },
+                        child: JandarmaPdf(
+                          baslik: 'Jandarma Çocuk Dergisi 1. Sayı',
+                          iconData: Icons.filter_1,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<dynamic>(
+                              builder: (_) => PDFViewerFromAsset(
+                                appBarTitle: 'Jandarma Çocuk Dergisi',
+                                pdfAssetPath: 'assets/pdf/jandarma_02.pdf',
+                              ),
+                            ),
+                          );
+                        },
+                        child: JandarmaPdf(
+                          baslik: 'Jandarma Çocuk Dergisi 2. Sayı',
+                          iconData: Icons.filter_2,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<dynamic>(
+                              builder: (_) => PDFViewerFromAsset(
+                                appBarTitle: 'Jandarma Çocuk Dergisi',
+                                pdfAssetPath: 'assets/pdf/jandarma_03.pdf',
+                              ),
+                            ),
+                          );
+                        },
+                        child: JandarmaPdf(
+                          baslik: 'Jandarma Çocuk Dergisi 3. Sayı',
+                          iconData: Icons.filter_3,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<dynamic>(
+                              builder: (_) => PDFViewerFromAsset(
+                                appBarTitle: 'Jandarma Çocuk Dergisi',
+                                pdfAssetPath: 'assets/pdf/jandarma_04.pdf',
+                              ),
+                            ),
+                          );
+                        },
+                        child: JandarmaPdf(
+                          baslik: 'Jandarma Çocuk Dergisi 4. Sayı',
+                          iconData: Icons.filter_4,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<dynamic>(
+                              builder: (_) => PDFViewerFromAsset(
+                                appBarTitle: 'Jandarma Çocuk Dergisi',
+                                pdfAssetPath: 'assets/pdf/jandarma_05.pdf',
+                              ),
+                            ),
+                          );
+                        },
+                        child: JandarmaPdf(
+                          baslik: 'Jandarma Çocuk Dergisi 5. Sayı',
+                          iconData: Icons.filter_5,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<dynamic>(
+                              builder: (_) => PDFViewerFromAsset(
+                                appBarTitle: 'Jandarma Çocuk Dergisi',
+                                pdfAssetPath: 'assets/pdf/jandarma_06.pdf',
+                              ),
+                            ),
+                          );
+                        },
+                        child: JandarmaPdf(
+                          baslik: 'Jandarma Çocuk Dergisi 6. Sayı',
+                          iconData: Icons.filter_6,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<dynamic>(
+                              builder: (_) => PDFViewerFromAsset(
+                                appBarTitle: 'Jandarma Çocuk Dergisi',
+                                pdfAssetPath: 'assets/pdf/jandarma_07.pdf',
+                              ),
+                            ),
+                          );
+                        },
+                        child: JandarmaPdf(
+                          baslik: 'Jandarma Çocuk Dergisi 7. Sayı',
+                          iconData: Icons.filter_7,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<dynamic>(
+                              builder: (_) => PDFViewerFromAsset(
+                                appBarTitle: 'Jandarma Çocuk Dergisi',
+                                pdfAssetPath: 'assets/pdf/jandarma_08.pdf',
+                              ),
+                            ),
+                          );
+                        },
+                        child: JandarmaPdf(
+                          baslik: 'Jandarma Çocuk Dergisi 8. Sayı',
+                          iconData: Icons.filter_8,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
