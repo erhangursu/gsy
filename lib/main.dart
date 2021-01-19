@@ -122,8 +122,6 @@ class _AnasayfaState extends State<Anasayfa> {
 }
 
 class AdvanceCustomAlert extends StatelessWidget {
-// const String yazi =
-
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -133,27 +131,34 @@ class AdvanceCustomAlert extends StatelessWidget {
         alignment: Alignment.topCenter,
         children: [
           Container(
-            height: 320,
+            height: MediaQuery.of(context).size.height - 70,
             child: Padding(
               padding: const EdgeInsets.fromLTRB(10, 70, 10, 10),
               child: Column(
                 children: [
                   Text(
                     'Küçük dostlarım hepinize merhaba',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                   ),
                   SizedBox(
                     height: 10,
                   ),
-                  Column(
-                    children: [
-                      Text(
-                          "  Her ne kadar bu salgın hastalık nedeniyle haftalarca, hatta aylarca uzaktan eğitim yapmış olsak da sizinle hep yakından ilgilenmeye çalıştım."),
-                    ],
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: new FutureBuilder(
+                          future: DefaultAssetBundle.of(context)
+                              .loadString("assets/res/yazi.txt"),
+                          builder: (context, snapshot) {
+                            return new Text(snapshot.data ?? '',
+                                softWrap: true);
+                          }),
+                    ),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  // Text(
+                  //     "  Her ne kadar bu salgın hastalık nedeniyle haftalarca, hatta aylarca uzaktan eğitim yapmış olsak da sizinle hep yakından ilgilenmeye çalıştım."),
+                  // SizedBox(
+                  //   height: 20,
+                  // ),
                   RaisedButton(
                     onPressed: () {
                       Navigator.of(context).pop();
