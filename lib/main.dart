@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'GSY',
+      title: 'GSY-3H',
       theme: ThemeData(
         primarySwatch: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -62,11 +62,11 @@ class _AnasayfaState extends State<Anasayfa> {
             IconButton(
                 icon: Icon(Icons.notifications),
                 onPressed: () {
-                  // Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //     builder: (context) => Page14(),
-                  //   ),
-                  // );
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AdvanceCustomAlert();
+                      });
                 }),
           ],
         ),
@@ -107,7 +107,8 @@ class _AnasayfaState extends State<Anasayfa> {
                       gridItem(10, 'ZUMBA'),
                       gridItem(11, 'GÖRSEL SANATLAR'),
                       gridItem(12, 'ADİLE TEYZE KUZUCUKLARIYLA'),
-                      gridItem(13, 'TATİL ÇALIŞMA PROGRAMI'),
+                      gridItem(13, 'ÇOCUK TİYATROSU'),
+                      gridItem(14, 'TATİL ÇALIŞMA PROGRAMI'),
                     ],
                   ),
                 ),
@@ -115,6 +116,69 @@ class _AnasayfaState extends State<Anasayfa> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class AdvanceCustomAlert extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+      child: Stack(
+        overflow: Overflow.visible,
+        alignment: Alignment.topCenter,
+        children: [
+          Container(
+            height: 320,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(10, 70, 10, 10),
+              child: Column(
+                children: [
+                  Text(
+                    'Sevgili Öğrencilerim',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  RaisedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    color: Colors.redAccent,
+                    child: Text(
+                      'Kapat',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            top: -50,
+            child: Container(
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(100),
+                image: DecorationImage(
+                  image: AssetImage("assets/img/gsy.jpg"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

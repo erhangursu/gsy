@@ -1,4 +1,4 @@
-import 'package:fileaudioplayer/fileaudioplayer.dart';
+//import 'package:fileaudioplayer/fileaudioplayer.dart';
 import 'package:flutter/material.dart';
 import 'package:gsy/common/audioPlayer.dart';
 
@@ -20,7 +20,7 @@ class MyBookList extends StatefulWidget {
 }
 
 class _MyBookListState extends State<MyBookList> {
-  FileAudioPlayer player = new FileAudioPlayer();
+  // FileAudioPlayer player = new FileAudioPlayer();
   @override
   Widget build(BuildContext context) {
     TextStyle listTextStyle =

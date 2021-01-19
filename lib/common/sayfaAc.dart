@@ -9,7 +9,7 @@ import 'package:gsy/pages/page_09.dart';
 import 'package:gsy/pages/page_10.dart';
 import 'package:gsy/pages/page_11.dart';
 import 'package:gsy/pages/page_12.dart';
-import 'package:gsy/pages/page_13.dart';
+import 'package:gsy/pages/page_14.dart';
 
 void sayfaAc(int position, context) {
   switch (position) {
@@ -87,9 +87,13 @@ void sayfaAc(int position, context) {
       );
       break;
     case 13:
+      urlAc(
+          "https://instagram.fadb3-1.fna.fbcdn.net/v/t50.2886-16/10000000_118820573402143_4597816472512062026_n.mp4?_nc_ht=instagram.fadb3-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=N3XrtvlwWzIAX_1P22L&oe=60096E93&oh=1d1ca0a5950ba6de1339473314400ca5");
+      break;
+    case 14:
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => Page13(),
+          builder: (context) => Page14(),
         ),
       );
       break;

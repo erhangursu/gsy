@@ -95,8 +95,9 @@ class MyDrawer extends StatelessWidget {
                     myListTile(11, "Görsel Sanatlar", 'assets/img/11.jpg'),
                     myListTile(
                         12, "Adile Teyze Kuzucuklarıyla", 'assets/img/12.jpg'),
+                    myListTile(13, "Çocuk Tiyatrosu", 'assets/img/13.jpg'),
                     myListTile(
-                        12, "Tatil Çalışma Programı", 'assets/img/13.png'),
+                        14, "Tatil Çalışma Programı", 'assets/img/14.png'),
                     ListTile(
                       leading: Container(
                         margin: EdgeInsets.only(left: 10),

@@ -16,7 +16,6 @@ dependencies:
   flutter_web_browser: ^0.13.1
   flutter_cached_pdfview: ^0.3.4
   youtube_player_flutter: ^7.0.0+7
-  fileaudioplayer: ^1.0.0
   audio_session: ^0.0.10
   just_audio: ^0.6.5
 
@@ -51,13 +50,13 @@ flutter:
     - assets/img/10.png
     - assets/img/11.jpg
     - assets/img/12.jpg
-    - assets/img/13.png
+    - assets/img/13.jpg
+    - assets/img/14.png
     - assets/img/play.png
     - assets/img/pause.png
     - assets/img/stop.png
     - assets/img/next.png
     - assets/img/music.png
-    - assets/img/kulaklik.png
     - assets/img/kulaklik2.png
     - assets/img/halk_oyunu.png
     - assets/img/halk01.jpg
@@ -80,7 +79,6 @@ flutter:
     - assets/img/musicPlay1.gif
     - assets/img/jandarma1.png
     - assets/img/jandarma2.jpg
-    - assets/img/musicBack01.jpg
     - assets/img/musicPlayer.gif
     - assets/img/musicPlayer3.gif
     - assets/img/ben_cengizhan.jpg
