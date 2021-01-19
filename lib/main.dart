@@ -122,6 +122,8 @@ class _AnasayfaState extends State<Anasayfa> {
 }
 
 class AdvanceCustomAlert extends StatelessWidget {
+// const String yazi =
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -137,15 +139,17 @@ class AdvanceCustomAlert extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Sevgili Öğrencilerim',
+                    'Küçük dostlarım hepinize merhaba',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                   SizedBox(
                     height: 10,
                   ),
-                  Text(
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                    style: TextStyle(fontSize: 16),
+                  Column(
+                    children: [
+                      Text(
+                          "  Her ne kadar bu salgın hastalık nedeniyle haftalarca, hatta aylarca uzaktan eğitim yapmış olsak da sizinle hep yakından ilgilenmeye çalıştım."),
+                    ],
                   ),
                   SizedBox(
                     height: 20,
