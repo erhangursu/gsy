@@ -36,44 +36,44 @@ class _AnasayfaState extends State<Anasayfa> {
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
-    return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Container(
-          //color: Colors.transparent.withOpacity(0.5),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.blueGrey, Colors.pinkAccent],
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          flexibleSpace: Container(
+            //color: Colors.transparent.withOpacity(0.5),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.blueGrey, Colors.pinkAccent],
+              ),
             ),
           ),
-        ),
-        title: Text(
-          'GSY 3-H SINIFI',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
+          title: Text(
+            'GSY 3-H SINIFI',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
           ),
+          elevation: 5.0,
+          centerTitle: true,
+          actions: [
+            IconButton(
+                icon: Icon(Icons.notifications),
+                onPressed: () {
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(
+                  //     builder: (context) => Page14(),
+                  //   ),
+                  // );
+                }),
+          ],
         ),
-        elevation: 5.0,
-        centerTitle: true,
-        actions: [
-          IconButton(
-              icon: Icon(Icons.notifications),
-              onPressed: () {
-                // Navigator.of(context).push(
-                //   MaterialPageRoute(
-                //     builder: (context) => Page14(),
-                //   ),
-                // );
-              }),
-        ],
-      ),
-      drawer: Theme(
-          data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
-          child: MyDrawer()),
-      body: SafeArea(
-        child: Material(
+        drawer: Theme(
+            data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
+            child: MyDrawer()),
+        body: Material(
           child: Stack(
             children: [
               Container(

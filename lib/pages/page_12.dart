@@ -18,10 +18,10 @@ class Page12 extends StatelessWidget {
           ),
         ),
         title: Text(
-          'Sabancı Sesli Kitap',
+          'Adile Teyze Kuzucuklarıyla',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 22,
+            fontSize: 20,
           ),
         ),
       ),

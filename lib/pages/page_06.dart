@@ -30,14 +30,12 @@ class Page06 extends StatelessWidget {
         children: [
           Opacity(
             opacity: 0.7,
-            child: Expanded(
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/img/jandarma2.jpg"),
-                    fit: BoxFit.fill,
-                  ),
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/img/jandarma2.jpg"),
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -56,8 +54,8 @@ class Page06 extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-                top: 140, left: 20, right: 20, bottom: 10),
+            padding:
+                const EdgeInsets.only(top: 70, left: 20, right: 20, bottom: 10),
             child: Column(
               children: [
                 Expanded(
