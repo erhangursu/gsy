@@ -4,14 +4,19 @@ import 'package:flutter/material.dart';
 //import 'package:flutter/services.dart';
 import 'package:just_audio/just_audio.dart';
 
-void main() => runApp(MyApp());
+//void main() => runApp(MyAudioPlay());
 
-class MyApp extends StatefulWidget {
+class MyAudioPlay extends StatefulWidget {
+  final String playLink;
+  final String playImg;
+
+  const MyAudioPlay({Key key, @required this.playLink, @required this.playImg})
+      : super(key: key);
   @override
-  _MyAppState createState() => _MyAppState();
+  _MyAudioPlayState createState() => _MyAudioPlayState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAudioPlayState extends State<MyAudioPlay> {
   AudioPlayer _player;
 
   // ConcatenatingAudioSource _playlist = ConcatenatingAudioSource(children: [
@@ -65,7 +70,7 @@ class _MyAppState extends State<MyApp> {
   _init() async {
     final session = await AudioSession.instance;
     await session.configure(AudioSessionConfiguration.speech());
-    await _player.setAsset("assets/audio/ben_kitap.mp3");
+    await _player.setAsset(widget.playLink);
     //AudioPlayer audioPlayer = AudioPlayer();
     try {
       // await audioPlayer.setAsset("assets/audio/ben_kitap.mp3");
@@ -85,170 +90,185 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                child: StreamBuilder<SequenceState>(
-                  stream: _player.sequenceStateStream,
-                  builder: (context, snapshot) {
-                    final state = snapshot.data;
-                    if (state?.sequence?.isEmpty ?? true) return SizedBox();
-                    // final metadata = state.currentSource.tag as AudioMetadata;
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Center(
-                                child: Container(
-                              height: 300,
-                              width: 300,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage("assets/img/ben_kitap.jpg"),
-                                  //image: AssetImage("assets/img/halkoyun1.png"),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            )),
-                          ),
-                        ),
-                        // Text(metadata.album ?? '',
-                        //     style: Theme.of(context).textTheme.headline6),
-                        // Text(metadata.title ?? ''),
-                      ],
-                    );
-                  },
-                ),
-              ),
-              ControlButtons(_player),
-              StreamBuilder<Duration>(
-                stream: _player.durationStream,
+    return Scaffold(
+      appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.pinkAccent, Colors.blueGrey],
+            ),
+          ),
+        ),
+        title: Text(
+          "Music Player",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+          ),
+        ),
+      ),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: StreamBuilder<SequenceState>(
+                stream: _player.sequenceStateStream,
                 builder: (context, snapshot) {
-                  final duration = snapshot.data ?? Duration.zero;
-                  return StreamBuilder<Duration>(
-                    stream: _player.positionStream,
-                    builder: (context, snapshot) {
-                      var position = snapshot.data ?? Duration.zero;
-                      if (position > duration) {
-                        position = duration;
-                      }
-                      return SeekBar(
-                        duration: duration,
-                        position: position,
-                        onChangeEnd: (newPosition) {
-                          _player.seek(newPosition);
-                        },
-                      );
-                    },
+                  final state = snapshot.data;
+                  if (state?.sequence?.isEmpty ?? true) return SizedBox();
+                  // final metadata = state.currentSource.tag as AudioMetadata;
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Center(
+                              child: Container(
+                            height: 250,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(widget.playImg),
+                                //image: AssetImage("assets/img/halkoyun1.png"),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          )),
+                        ),
+                      ),
+                      // Text(metadata.album ?? '',
+                      //     style: Theme.of(context).textTheme.headline6),
+                      // Text(metadata.title ?? ''),
+                    ],
                   );
                 },
               ),
-              SizedBox(height: 8.0),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(
-                      child: Container(
-                    height: 300,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/img/musicPlayer3.gif"),
-                        //image: AssetImage("assets/img/halkoyun1.png"),
-                        fit: BoxFit.fill,
-                      ),
+            ),
+            ControlButtons(_player),
+            StreamBuilder<Duration>(
+              stream: _player.durationStream,
+              builder: (context, snapshot) {
+                final duration = snapshot.data ?? Duration.zero;
+                return StreamBuilder<Duration>(
+                  stream: _player.positionStream,
+                  builder: (context, snapshot) {
+                    var position = snapshot.data ?? Duration.zero;
+                    if (position > duration) {
+                      position = duration;
+                    }
+                    return SeekBar(
+                      duration: duration,
+                      position: position,
+                      onChangeEnd: (newPosition) {
+                        _player.seek(newPosition);
+                      },
+                    );
+                  },
+                );
+              },
+            ),
+            SizedBox(height: 8.0),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                    child: Container(
+                  height: 300,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/img/musicPlayer3.gif"),
+                      //image: AssetImage("assets/img/halkoyun1.png"),
+                      fit: BoxFit.fill,
                     ),
-                  )),
-                ),
+                  ),
+                )),
               ),
-              // Row(
-              //   children: [
-              // StreamBuilder<LoopMode>(
-              //   stream: _player.loopModeStream,
-              //   builder: (context, snapshot) {
-              //     final loopMode = snapshot.data ?? LoopMode.off;
-              //     const icons = [
-              //       Icon(Icons.repeat, color: Colors.grey),
-              //       Icon(Icons.repeat, color: Colors.orange),
-              //       Icon(Icons.repeat_one, color: Colors.orange),
-              //     ];
-              //     const cycleModes = [
-              //       LoopMode.off,
-              //       LoopMode.all,
-              //       LoopMode.one,
-              //     ];
-              //     final index = cycleModes.indexOf(loopMode);
-              //     return IconButton(
-              //       icon: icons[index],
-              //       onPressed: () {
-              //         _player.setLoopMode(cycleModes[
-              //             (cycleModes.indexOf(loopMode) + 1) %
-              //                 cycleModes.length]);
-              //       },
-              //     );
-              //   },
-              // ),
-              // Expanded(
-              //   child: Text(
-              //     "Playlist",
-              //     style: Theme.of(context).textTheme.headline6,
-              //     textAlign: TextAlign.center,
-              //   ),
-              // ),
-              // StreamBuilder<bool>(
-              //   stream: _player.shuffleModeEnabledStream,
-              //   builder: (context, snapshot) {
-              //     final shuffleModeEnabled = snapshot.data ?? false;
-              //     return IconButton(
-              //       icon: shuffleModeEnabled
-              //           ? Icon(Icons.shuffle, color: Colors.orange)
-              //           : Icon(Icons.shuffle, color: Colors.grey),
-              //       onPressed: () async {
-              //         final enable = !shuffleModeEnabled;
-              //         if (enable) {
-              //           await _player.shuffle();
-              //         }
-              //         await _player.setShuffleModeEnabled(enable);
-              //       },
-              //     );
-              //   },
-              // ),
-              //   ],
-              // ),
-              // Container(
-              //   height: 240.0,
-              //   child: StreamBuilder<SequenceState>(
-              //     stream: _player.sequenceStateStream,
-              //     builder: (context, snapshot) {
-              //       final state = snapshot.data;
-              //       final sequence = state?.sequence ?? [];
-              //       return ListView.builder(
-              //         itemCount: sequence.length,
-              //         itemBuilder: (context, index) => Material(
-              //           color: index == state.currentIndex
-              //               ? Colors.grey.shade300
-              //               : null,
-              //           child: ListTile(
-              //             title: Text(sequence[index].tag.title),
-              //             onTap: () {
-              //               _player.seek(Duration.zero, index: index);
-              //             },
-              //           ),
-              //         ),
-              //       );
-              //     },
-              //   ),
-              // ),
-            ],
-          ),
+            ),
+            // Row(
+            //   children: [
+            // StreamBuilder<LoopMode>(
+            //   stream: _player.loopModeStream,
+            //   builder: (context, snapshot) {
+            //     final loopMode = snapshot.data ?? LoopMode.off;
+            //     const icons = [
+            //       Icon(Icons.repeat, color: Colors.grey),
+            //       Icon(Icons.repeat, color: Colors.orange),
+            //       Icon(Icons.repeat_one, color: Colors.orange),
+            //     ];
+            //     const cycleModes = [
+            //       LoopMode.off,
+            //       LoopMode.all,
+            //       LoopMode.one,
+            //     ];
+            //     final index = cycleModes.indexOf(loopMode);
+            //     return IconButton(
+            //       icon: icons[index],
+            //       onPressed: () {
+            //         _player.setLoopMode(cycleModes[
+            //             (cycleModes.indexOf(loopMode) + 1) %
+            //                 cycleModes.length]);
+            //       },
+            //     );
+            //   },
+            // ),
+            // Expanded(
+            //   child: Text(
+            //     "Playlist",
+            //     style: Theme.of(context).textTheme.headline6,
+            //     textAlign: TextAlign.center,
+            //   ),
+            // ),
+            // StreamBuilder<bool>(
+            //   stream: _player.shuffleModeEnabledStream,
+            //   builder: (context, snapshot) {
+            //     final shuffleModeEnabled = snapshot.data ?? false;
+            //     return IconButton(
+            //       icon: shuffleModeEnabled
+            //           ? Icon(Icons.shuffle, color: Colors.orange)
+            //           : Icon(Icons.shuffle, color: Colors.grey),
+            //       onPressed: () async {
+            //         final enable = !shuffleModeEnabled;
+            //         if (enable) {
+            //           await _player.shuffle();
+            //         }
+            //         await _player.setShuffleModeEnabled(enable);
+            //       },
+            //     );
+            //   },
+            // ),
+            //   ],
+            // ),
+            // Container(
+            //   height: 240.0,
+            //   child: StreamBuilder<SequenceState>(
+            //     stream: _player.sequenceStateStream,
+            //     builder: (context, snapshot) {
+            //       final state = snapshot.data;
+            //       final sequence = state?.sequence ?? [];
+            //       return ListView.builder(
+            //         itemCount: sequence.length,
+            //         itemBuilder: (context, index) => Material(
+            //           color: index == state.currentIndex
+            //               ? Colors.grey.shade300
+            //               : null,
+            //           child: ListTile(
+            //             title: Text(sequence[index].tag.title),
+            //             onTap: () {
+            //               _player.seek(Duration.zero, index: index);
+            //             },
+            //           ),
+            //         ),
+            //       );
+            //     },
+            //   ),
+            // ),
+          ],
         ),
       ),
     );

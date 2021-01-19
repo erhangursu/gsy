@@ -6,27 +6,27 @@ class Page07 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.pinkAccent, Colors.blueGrey],
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.pinkAccent, Colors.blueGrey],
+              ),
+            ),
+          ),
+          title: Text(
+            'Müzik Kitabındaki Şarkılar',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 22,
             ),
           ),
         ),
-        title: Text(
-          'Müzik Kitabındaki Şarkılar',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 22,
-          ),
-        ),
-      ),
-      body: Material(
-        child: Column(
+        body: Column(
           children: [
             Container(
               height: 120,
@@ -54,98 +54,96 @@ class Page07 extends StatelessWidget {
               ),
             ),
             Expanded(
+              flex: 2,
               child: ListView(
+                padding:
+                    EdgeInsets.only(top: 20, left: 10, right: 10, bottom: 20),
                 shrinkWrap: true,
                 children: [
                   MyPlayList(
-                    baslik: "Arkadaşım Eşşek",
                     musicLink: "assets/music/arkadasimEssek_BarisManco.mp3",
-                    musicTitle: "arkadasimEssek_BarisManco.mp3",
+                    musicTitle: "Arkadaşım Eşşek",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Atabari",
-                    musicLink: "assets/music/atabari.mp3",
-                    musicTitle: "atabari.mp3",
-                  ),
-                  MyPlayList(
-                    baslik: "Biricik Öğretmenim",
                     musicLink: "assets/music/biricikOgretmenim.mp3",
-                    musicTitle: "biricikOgretmenim.mp3",
+                    musicTitle: "Biricik Öğretmenim",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Bulut Olsam",
                     musicLink: "assets/music/bulutOlsam.mp3",
-                    musicTitle: "bulutOlsam.mp3",
+                    musicTitle: "Bulut Olsam",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Canım Atatürk",
                     musicLink: "assets/music/canimAtaturk.mp3",
-                    musicTitle: "canimAtaturk.mp3",
+                    musicTitle: "Canım Atatürk",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Cilveloy Nanayda",
                     musicLink: "assets/music/cilveloyNanayda.mp3",
-                    musicTitle: "cilveloyNanayda.mp3",
+                    musicTitle: "Cilveloy Nanayda",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Cumhuriyet",
                     musicLink: "assets/music/cumhuriyet.mp3",
-                    musicTitle: "cumhuriyet.mp3",
+                    musicTitle: "Cumhuriyet",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Delilo",
                     musicLink: "assets/music/delilo.mp3",
-                    musicTitle: "delilo.mp3",
+                    musicTitle: "Delilo",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Halay",
                     musicLink: "assets/music/halay2.mp3",
-                    musicTitle: "halay2.mp3",
+                    musicTitle: "Halay",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Kış Baba",
                     musicLink: "assets/music/kisBaba.mp3",
-                    musicTitle: "kisBaba.mp3",
+                    musicTitle: "Kış Baba",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Köçekçe",
                     musicLink: "assets/music/kocekce.mp3",
-                    musicTitle: "kocekce.mp3",
+                    musicTitle: "Köçekçe",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Kümesteki Dostlarımız",
                     musicLink: "assets/music/kumestekiDostlarimiz.mp3",
-                    musicTitle: "kumestekiDostlarimiz.mp3",
+                    musicTitle: "Kümesteki Dostlarımız",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Sevimli Tırtıl",
                     musicLink: "assets/music/minikSerce_sevimliTirtil.mp3",
-                    musicTitle: "minikSerce_sevimliTirtil.mp3",
+                    musicTitle: "Sevimli Tırtıl",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Mutluluğu Yakala",
                     musicLink: "assets/music/mutluluguYakala.mp3",
-                    musicTitle: "mutluluguYakala.mp3",
+                    musicTitle: "Arkadaşım Eşşek",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Orman",
                     musicLink: "assets/music/orman.mp3",
-                    musicTitle: "orman.mp3",
+                    musicTitle: "Orman",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Şarkı Söylerim",
                     musicLink: "assets/music/sarkiSoylerim.mp3",
-                    musicTitle: "sarkiSoylerim.mp3",
+                    musicTitle: "Arkadaşım Eşşek",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Üç elma",
                     musicLink: "assets/music/ucElma.mp3",
-                    musicTitle: "ucElma.mp3",
+                    musicTitle: "Üç elma",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                   MyPlayList(
-                    baslik: "Üsküdara Giderken",
                     musicLink: "assets/music/uskudaraGiderken.mp3",
-                    musicTitle: "uskudaraGiderken.mp3",
+                    musicTitle: "Üsküdara Giderken",
+                    musicImg: "assets/img/musicPlayer.gif",
                   ),
                 ],
               ),
