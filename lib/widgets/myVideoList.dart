@@ -88,7 +88,7 @@ class MyVideoList extends StatelessWidget {
                     ),
                     Icon(Icons.play_circle_fill_outlined,
                         size: 50, color: Colors.red),
-                    SizedBox(width: 30),
+                    SizedBox(width: 10),
                   ],
                 ),
               ),
