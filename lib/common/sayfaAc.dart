@@ -111,7 +111,7 @@ void urlAc(String url) {
         navigationBarColor: Colors.amber,
         addDefaultShareMenuItem: true,
         instantAppsEnabled: true,
-        showTitle: true,
+        showTitle: false,
         urlBarHidingEnabled: true,
       ),
     );

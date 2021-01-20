@@ -6,8 +6,6 @@ class Page14 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TextStyle listTextStyle =
-    //     TextStyle(fontSize: 16, fontWeight: FontWeight.bold);
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
@@ -41,7 +39,6 @@ class Page14 extends StatelessWidget {
             ),
           ),
           ListView(
-            //padding: EdgeInsets.only(top: 20, right: 20, left: 20),
             children: [
               Container(
                 height: 180,

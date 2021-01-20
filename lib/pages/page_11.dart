@@ -33,28 +33,13 @@ class Page11 extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/img/back05.jpg"),
-                  //image: AssetImage("assets/img/halkoyun1.png"),
+                  image: AssetImage("assets/img/back01.png"),
                   fit: BoxFit.fill,
                 ),
               ),
             ),
             Column(
               children: [
-                // Opacity(
-                //   opacity: 1,
-                //   child: Container(
-                //     margin: EdgeInsets.only(top: 20, bottom: 15),
-                //     height: (MediaQuery.of(context).size.width / 2) * 0.7,
-                //     width: MediaQuery.of(context).size.width / 2,
-                //     decoration: BoxDecoration(
-                //       image: DecorationImage(
-                //         image: AssetImage("assets/img/back05.jpg"),
-                //         fit: BoxFit.fill,
-                //       ),
-                //     ),
-                //   ),
-                // ),
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(10),
