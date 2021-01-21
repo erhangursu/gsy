@@ -25,48 +25,50 @@ class _MyBookListState extends State<MyBookList> {
   Widget build(BuildContext context) {
     TextStyle listTextStyle =
         TextStyle(fontSize: 16, fontWeight: FontWeight.bold);
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: InkWell(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => MyAudioPlay(
-                    playLink: widget.kitapLink,
-                    playImg: widget.kitapImg,
-                  ),
-                ),
-              );
-            },
-            child: Container(
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage(widget.kitapImg),
-                  ),
-                  SizedBox(width: 20),
-                  Expanded(
-                    child: Container(
-                      child: Text(
-                        widget.baslik,
-                        style: listTextStyle,
-                      ),
+    return Material(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => MyAudioPlay(
+                      playLink: widget.kitapLink,
+                      playImg: widget.kitapImg,
                     ),
                   ),
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage("assets/img/play.png"),
-                  ),
-                  SizedBox(width: 10),
-                ],
+                );
+              },
+              child: Container(
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage(widget.kitapImg),
+                    ),
+                    SizedBox(width: 20),
+                    Expanded(
+                      child: Container(
+                        child: Text(
+                          widget.baslik,
+                          style: listTextStyle,
+                        ),
+                      ),
+                    ),
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage("assets/img/play.png"),
+                    ),
+                    SizedBox(width: 10),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -4,7 +4,7 @@ import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:gsy/pages/page_03.dart';
 import 'package:gsy/pages/page_06.dart';
 import 'package:gsy/pages/page_07.dart';
-import 'package:gsy/pages/page_08..dart';
+import 'package:gsy/pages/page_08.dart';
 import 'package:gsy/pages/page_09.dart';
 import 'package:gsy/pages/page_10.dart';
 import 'package:gsy/pages/page_11.dart';
