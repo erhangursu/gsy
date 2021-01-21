@@ -58,6 +58,11 @@ List<Widget> myList() {
       musicImg: "assets/img/musicPlayer.gif",
     ),
     MyPlayList(
+      musicLink: "assets/music/atabari.mp3",
+      musicTitle: "Atabarı",
+      musicImg: "assets/img/musicPlayer.gif",
+    ),
+    MyPlayList(
       musicLink: "assets/music/biricikOgretmenim.mp3",
       musicTitle: "Biricik Öğretmenim",
       musicImg: "assets/img/musicPlayer.gif",
