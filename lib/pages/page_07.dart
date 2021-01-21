@@ -114,7 +114,7 @@ List<Widget> myList() {
     ),
     MyPlayList(
       musicLink: "assets/music/mutluluguYakala.mp3",
-      musicTitle: "Arkadaşım Eşşek",
+      musicTitle: "Mutluluğu Yakala",
       musicImg: "assets/img/musicPlayer.gif",
     ),
     MyPlayList(
@@ -124,7 +124,7 @@ List<Widget> myList() {
     ),
     MyPlayList(
       musicLink: "assets/music/sarkiSoylerim.mp3",
-      musicTitle: "Arkadaşım Eşşek",
+      musicTitle: "Şarkı Söylerim",
       musicImg: "assets/img/musicPlayer.gif",
     ),
     MyPlayList(
