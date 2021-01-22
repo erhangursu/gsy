@@ -156,13 +156,6 @@ class _YoutubeAcState extends State<YoutubeAc> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      // SizedBox(height: 10),
-                      // Text(
-                      //   _videoMetaData.author,
-                      //   style: const TextStyle(
-                      //     color: Colors.blueAccent,
-                      //   ),
-                      // ),
                       SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
