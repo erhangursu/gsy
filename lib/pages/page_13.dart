@@ -1,6 +1,4 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:gsy/widgets/myVideoList.dart';
 
 class Page13 extends StatelessWidget {
@@ -125,6 +123,7 @@ class Page13 extends StatelessWidget {
                           videoInfo: '80 M görüntüleme',
                           videoInfo2: '7 yıl önce ',
                         ),
+                        SizedBox(height: 20),
                       ],
                     ),
                   ),
@@ -133,35 +132,6 @@ class Page13 extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-void urlAc(String url) {
-  if (Platform.isAndroid) {
-    FlutterWebBrowser.openWebPage(
-      url: url,
-      customTabsOptions: CustomTabsOptions(
-        colorScheme: CustomTabsColorScheme.dark,
-        toolbarColor: Colors.deepPurple,
-        secondaryToolbarColor: Colors.green,
-        navigationBarColor: Colors.amber,
-        addDefaultShareMenuItem: true,
-        instantAppsEnabled: true,
-        showTitle: false,
-        urlBarHidingEnabled: true,
-      ),
-    );
-  } else {
-    FlutterWebBrowser.openWebPage(
-      url: url,
-      safariVCOptions: SafariViewControllerOptions(
-        barCollapsingEnabled: true,
-        preferredBarTintColor: Colors.green,
-        preferredControlTintColor: Colors.amber,
-        dismissButtonStyle: SafariViewControllerDismissButtonStyle.close,
-        modalPresentationCapturesStatusBarAppearance: true,
       ),
     );
   }
